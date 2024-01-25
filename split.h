@@ -18,5 +18,5 @@ struct Node
 };
 
 void split(Node*& in, Node*& odds, Node*& evens);
-
+void printNodes(Node* head); //print functionality for testing
 #endif
