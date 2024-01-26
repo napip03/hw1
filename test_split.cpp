@@ -11,7 +11,7 @@ g++ split.cpp test_split.cpp -o test_split
 #include<iostream>
 #include "split.h"
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) //only failing atm InputSet_to_Null
 {
     Node* head = new Node(3, nullptr); 
     Node* two  = new Node(2, nullptr);
