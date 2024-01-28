@@ -59,6 +59,12 @@ void split(Node*& in, Node*& odds, Node*& evens)
   }//cleaning step
   //evens = evens->next;
   //odds = odds->next;
+  while (in != nullptr) //formate usage from ulliststr.clear()
+  {
+    Node *temp = in->next;
+    delete in;
+    in = temp;
+  }
   in = NULL;
 }
 
