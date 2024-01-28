@@ -142,16 +142,16 @@ std::string* ULListStr::getValAtLoc(size_t loc) const //clarrify if loc includes
     return nullptr;
   Item* curr = head_;
   int i = 0;
-  std::cout << "****"<<curr->last - curr->first << "****^"<< loc <<"^"<< std::endl;
+  //std::cout << "****"<<curr->last - curr->first << "****^"<< loc <<"^"<< std::endl;
   while (loc > (curr->last - curr->first - 1))
   {
-    std::cout << i;
+    //std::cout << i;
     loc-= (curr->last - curr->first);
-    std::cout << "within getVal @ node "<<  i  << " loc is " << loc << std::endl;
+    //std::cout << "within getVal @ node "<<  i  << " loc is " << loc << std::endl;
     //subtract from location
     curr = curr->next;
     i++;
-    std::cout << "$$$" << loc << "$$$";
+    //std::cout << "$$$" << loc << "$$$";
   }
   if (loc < 0 )
     {
