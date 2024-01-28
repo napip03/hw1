@@ -24,6 +24,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     //std::cout << "ENTERS NULL CASE for in/in.value || " << (int)NULL << std::endl;
     return;
   }
+  
   //if head is odd; add head to odds; recall function change location of odds to odds->next and in to in->next;
   if (in->value % 2 == 1) //odd
   {
@@ -32,9 +33,10 @@ void split(Node*& in, Node*& odds, Node*& evens)
     {
       odds = new Node(in->value, nullptr);
     }
-    else{
-      odds->next = in;
-        }
+    else
+    {
+        odds->next = in;
+    }
     //warning this will cause the next "value" of the list to be the next of "in"
     split(in->next, odds->next, evens);
   }
@@ -51,11 +53,13 @@ void split(Node*& in, Node*& odds, Node*& evens)
     }
     split(in->next, odds, evens->next);
   }
-  else{
-  std::cout << "FAILS to enter if statement @ val = " << in->value << std::endl;
+  else
+  {
+      std::cout << "FAILS to enter if statement @ val = " << in->value << std::endl;
   }//cleaning step
   //evens = evens->next;
   //odds = odds->next;
+  in = NULL;
 }
 
 /* If you needed a helper function, write it here */

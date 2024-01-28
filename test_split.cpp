@@ -20,10 +20,11 @@ int main(int argc, char* argv[]) //only failing atm InputSet_to_Null
     two->next = zero;
     head->next = two;
     zero->next = four;
-    Node* odds = 0;
-    Node* evens = 0;
+    Node* odds = nullptr;
+    Node* evens = nullptr;
     //std::cout << head->value << std::endl;
     split(head, odds, evens);
+    std::cout << (head == nullptr) << std::endl;
     printNodes(head);
     printNodes(odds);
     printNodes(evens);
