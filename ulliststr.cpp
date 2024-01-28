@@ -132,7 +132,7 @@ std::string const & ULListStr::back() const
   {
     return tail_->val[tail_->last-1];
   }
-  std::cout << "returns null from back()" << std::endl;
+  //std::cout << "returns null from back()" << std::endl;
   return std::string();
 }
 //O(N)
@@ -158,7 +158,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const //clarrify if loc includes
       std::cout<<"LOC compututation error"<<std::endl;
       return nullptr; 
     }
-    std::cout << "$$$" << loc << "$$$"; // << curr->first << curr->last << std::endl;
+    //std::cout << "$$$" << loc << "$$$"; // << curr->first << curr->last << std::endl;
   //std::cout << "index after while loop is " << loc << ". IS CURRENT NODE HEAD/TAIL" << (curr == head_ || curr == tail_) << std::endl; 
   return &curr->val[loc+ curr->first];
   //return curr->&value[loc - curr->first];
