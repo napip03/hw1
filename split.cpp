@@ -18,7 +18,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
   //std::cout << in->value << std::endl;
   /* Add code here */
   //if p is empty or has no content/doesnt exist. recursion has ended. break/return none;
-  if (!in) //idk why in==nullptr doesnt work. it said "split.cpp:20:13: error: use of 
+  if (!in || in == nullptr) //idk why in==nullptr doesnt work. it said "split.cpp:20:13: error: use of 
   //undeclared identifier 'null' if (in == nullptr)"
   {
     //std::cout << "ENTERS NULL CASE for in/in.value || " << (int)NULL << std::endl;
