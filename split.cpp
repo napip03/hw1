@@ -15,11 +15,13 @@ the function below should be the only one in this file.
 #include<iostream>
 void split(Node*& in, Node*& odds, Node*& evens)
 {
+  //std::cout << in->value << std::endl;
   /* Add code here */
   //if p is empty or has no content/doesnt exist. recursion has ended. break/return none;
-  if (!in || in->value == NULL) //idk why in==nullptr doesnt work. it said "split.cpp:20:13: error: use of 
+  if (!in) //idk why in==nullptr doesnt work. it said "split.cpp:20:13: error: use of 
   //undeclared identifier 'null' if (in == nullptr)"
   {
+    //std::cout << "ENTERS NULL CASE for in/in.value || " << (int)NULL << std::endl;
     return;
   }
   //if head is odd; add head to odds; recall function change location of odds to odds->next and in to in->next;
@@ -37,7 +39,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     split(in->next, odds->next, evens);
   }
   //if head is even; add head to evens; recall function change location of evens to evens->next and in to in->next;
-  if (in->value % 2 == 0) //even
+  else if (in->value % 2 == 0 || in->value == 0) //even
   {
     //add in to evens
     if (!evens)
@@ -49,7 +51,9 @@ void split(Node*& in, Node*& odds, Node*& evens)
     }
     split(in->next, odds, evens->next);
   }
-  //cleaning step
+  else{
+  std::cout << "FAILS to enter if statement @ val = " << in->value << std::endl;
+  }//cleaning step
   //evens = evens->next;
   //odds = odds->next;
 }

@@ -15,12 +15,14 @@ int main(int argc, char* argv[]) //only failing atm InputSet_to_Null
 {
     Node* head = new Node(3, nullptr); 
     Node* two  = new Node(2, nullptr);
-    Node* five = new Node(5, nullptr);
-    two->next = five;
+    Node* zero = new Node(0, nullptr);
+    Node* four = new Node(4, nullptr);
+    two->next = zero;
     head->next = two;
+    zero->next = four;
     Node* odds = 0;
     Node* evens = 0;
-    std::cout << head->value << std::endl;
+    //std::cout << head->value << std::endl;
     split(head, odds, evens);
     printNodes(head);
     printNodes(odds);
