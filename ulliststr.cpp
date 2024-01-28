@@ -196,6 +196,7 @@ std::string const & ULListStr::get(size_t loc) const
 
 void ULListStr::clear()
 {
+  std::cout << "ENTERS CLEAR()" << std::endl;
   while(head_ != NULL){
     Item *temp = head_->next;
     delete head_;

@@ -35,6 +35,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     }
     else
     {
+       std::cout << "ENTERS HERE EVER -else odd-" <<std::endl;
         odds->next = in;
     }
     //warning this will cause the next "value" of the list to be the next of "in"
@@ -49,6 +50,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
       evens = new Node(in->value, nullptr);
     }
     else{
+      std::cout << "ENTERS HERE EVER -else even-" <<std:endl;
       evens->next = in;
     }
     split(in->next, odds, evens->next);
@@ -56,7 +58,8 @@ void split(Node*& in, Node*& odds, Node*& evens)
   else
   {
       std::cout << "FAILS to enter if statement @ val = " << in->value << std::endl;
-  }//cleaning step
+  }
+  //cleaning
   //evens = evens->next;
   //odds = odds->next;
   while (in != nullptr) //formate usage from ulliststr.clear()
