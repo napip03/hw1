@@ -12,7 +12,7 @@ the function below should be the only one in this file.
 
 #include "split.h"
 /* Add a prototype for a helper function here if you need */
-#include<iostream>
+//#include<iostream>
 void split(Node*& in, Node*& odds, Node*& evens)
 {
   //std::cout << in->value << std::endl;
@@ -54,14 +54,10 @@ void split(Node*& in, Node*& odds, Node*& evens)
     }
     split(in->next, odds, evens->next);
   }
-  else
-  {
-      std::cout << "FAILS to enter if statement @ val = " << in->value << std::endl;
-  }
   //cleaning
   //evens = evens->next;
   //odds = odds->next;
-  in = NULL;
+  in = nullptr;
 }
 
 /* If you needed a helper function, write it here */
