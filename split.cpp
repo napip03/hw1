@@ -24,7 +24,6 @@ void split(Node*& in, Node*& odds, Node*& evens)
     //std::cout << "ENTERS NULL CASE for in/in.value || " << (int)NULL << std::endl;
     return;
   }
-  
   //if head is odd; add head to odds; recall function change location of odds to odds->next and in to in->next;
   if (in->value % 2 == 1) //odd
   {
@@ -35,7 +34,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     }
     else
     {
-       std::cout << "ENTERS HERE EVER -else odd-" <<std::endl;
+        //std::cout << "ENTERS HERE EVER -else odd-" << std::endl;
         odds->next = in;
     }
     //warning this will cause the next "value" of the list to be the next of "in"
@@ -50,7 +49,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
       evens = new Node(in->value, nullptr);
     }
     else{
-      std::cout << "ENTERS HERE EVER -else even-" <<std:endl;
+      //std::cout << "ENTERS HERE EVER -else even-" <<std::endl;
       evens->next = in;
     }
     split(in->next, odds, evens->next);
@@ -62,24 +61,9 @@ void split(Node*& in, Node*& odds, Node*& evens)
   //cleaning
   //evens = evens->next;
   //odds = odds->next;
-  while (in != nullptr) //formate usage from ulliststr.clear()
-  {
-    Node *temp = in->next;
-    delete in;
-    in = temp;
-  }
   in = NULL;
 }
 
 /* If you needed a helper function, write it here */
-
-void printNodes(Node* head) //helper function for printing node from head
-{
-  Node* currNode = head;
-  while (currNode != nullptr)
-  {
-    std::cout << currNode->value << " ";
-    currNode = currNode->next;
-  }
-  std::cout << std::endl;
-}
+/*
+*/
